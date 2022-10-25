@@ -29,12 +29,12 @@ public class CanvasManager : MonoBehaviour
 
     public void SetScore()
     {
-        _scoreText.text = Game.Instance.ScoreLogick.Score.ToString();
+        _scoreText.text = "Score: " + Game.Instance.ScoreLogick.Score.ToString();
     }
 
     public void SetMaxScore()
     {
-        _maxScoreText.text = Game.Instance.ScoreLogick.Score.ToString();
+        _maxScoreText.text = "Max score: " + Game.Instance.ScoreLogick.MaxScore.ToString();
     }
 
     public void SwitchMenuGroup()

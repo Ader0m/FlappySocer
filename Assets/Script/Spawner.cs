@@ -21,14 +21,9 @@ public class Spawner : MonoBehaviour
     /// milliseconds
     /// </summary>
     [SerializeField] private float _delaySpawnPipes;
-    /// <summary>
-    /// milliseconds
-    /// </summary>
-    [SerializeField] private float _delaySpawnLand;
     [SerializeField] private float _pipesAndLandSpeed;
     private List<IGameWorldObj> _pipesAndLandList;
     private DateTime _timePipes;
-    private DateTime _timeLand;
 
     #region Get/Set
 
@@ -47,14 +42,12 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         _timePipes = DateTime.Now;
-        _timeLand = DateTime.Now;
     }
 
     void Update()
     {
         SpawnPipes();
-        SpawnLand();
-        MoveObj();
+        MoveObj();       
     }
 
     private void SpawnPipes()
@@ -62,26 +55,25 @@ public class Spawner : MonoBehaviour
         if ((DateTime.Now - _timePipes).TotalMilliseconds > _delaySpawnPipes)
         {
             GameObject obj = Instantiate(_pipes, _pipeLayer);
-            obj.transform.position = new Vector3(transform.position.x, UnityEngine.Random.Range(0, 7) - 3, 1);
+            obj.transform.position = new Vector3(10, UnityEngine.Random.Range(0, 7) - 3, 1);
             _timePipes = DateTime.Now;
         }
     }
 
     private void SpawnLand()
     {
-        if ((DateTime.Now - _timeLand).TotalMilliseconds > _delaySpawnLand)
-        {
-            GameObject obj = Instantiate(_land, _landLayer);
-            obj.transform.position = new Vector3(obj.transform.position.x + 1.45f, obj.transform.position.y, obj.transform.position.z);
-            _timeLand = DateTime.Now;
-        }
+        GameObject obj = Instantiate(_land, _landLayer);
+        obj.transform.position = new Vector3(11.45f, obj.transform.position.y, obj.transform.position.z);  
     }    
 
     private void MoveObj()
     {
+        float newPipesAndLandSpeed = _pipesAndLandSpeed + Game.Instance.ScoreLogick.Score / 25;
+
+
         foreach (var worldObj in _pipesAndLandList)
         {
-            worldObj.Move(_pipesAndLandSpeed);
+            worldObj.Move(newPipesAndLandSpeed);
         }
     }
 
@@ -89,5 +81,11 @@ public class Spawner : MonoBehaviour
     {
         GameObject obj = Instantiate(_player);
         obj.transform.position = new Vector3(-6, 0, 0);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<LandCell>(out _) && gameObject.activeSelf)
+            SpawnLand();
     }
 }

@@ -24,12 +24,20 @@ public class Game : MonoBehaviour
     {
         _instance = this;
         _scoreLogick = new ScoreLogick();
+    }
 
+    void Start()
+    {
+        CanvasManager.Instance.SetScore();
+        CanvasManager.Instance.SetMaxScore();
     }
 
     public void StartGame()
     {
+        _scoreLogick.Reset();
         CanvasManager.Instance.SwitchMenuGroup();
+        CanvasManager.Instance.SetScore();
+        CanvasManager.Instance.SetMaxScore();
         Spawner.Instance.gameObject.SetActive(true);
         Spawner.Instance.SpawnPlayer();
     }
@@ -46,5 +54,4 @@ public class Game : MonoBehaviour
         _scoreLogick.CheckMaxScore();
         CanvasManager.Instance.SwitchMenuGroup();
     }
-    
 }
