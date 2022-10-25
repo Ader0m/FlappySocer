@@ -61,7 +61,7 @@ public class Spawner : MonoBehaviour
         if ((DateTime.Now - _timePipes).TotalMilliseconds > _delaySpawnPipes)
         {
             GameObject obj = Instantiate(_pipes, _pipeLayer);
-            obj.transform.position = new Vector3(_pipesSpawnX, UnityEngine.Random.Range(0, 7) - 3, 1);
+            obj.transform.position = new Vector3(_pipesSpawnX, UnityEngine.Random.Range(1, 7) - 3, 1);
             _timePipes = DateTime.Now;
         }
     }
