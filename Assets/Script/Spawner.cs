@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,11 +43,9 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         _pipesSpawnX = transform.position.x;
-        _landSpawnX = _pipesSpawnX + 2.45f;
+        _landSpawnX = _pipesSpawnX + 2.45f; // Sprite Size / 2
         _pipesSpawnX *= 1.111f;
-        Debug.Log(_landSpawnX);
-        _timePipes = DateTime.Now;
-        Debug.Log("Collider Size : " + _land.gameObject.GetComponent<SpriteRenderer>().bounds.size);
+        _timePipes = DateTime.Now;      
     }
 
     void Update()
