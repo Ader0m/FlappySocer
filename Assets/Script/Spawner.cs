@@ -44,10 +44,11 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         _pipesSpawnX = transform.position.x;
-        _landSpawnX = _pipesSpawnX * 1.272f;
+        _landSpawnX = _pipesSpawnX + 2.45f;
         _pipesSpawnX *= 1.111f;
-       
+        Debug.Log(_landSpawnX);
         _timePipes = DateTime.Now;
+        Debug.Log("Collider Size : " + _land.gameObject.GetComponent<SpriteRenderer>().bounds.size);
     }
 
     void Update()
@@ -69,7 +70,7 @@ public class Spawner : MonoBehaviour
     private void SpawnLand()
     {
         GameObject obj = Instantiate(_land, _landLayer);
-        obj.transform.position = new Vector3(11.45f, obj.transform.position.y, obj.transform.position.z);  
+        obj.transform.position = new Vector3(_landSpawnX, obj.transform.position.y, obj.transform.position.z);  
     }    
 
     private void MoveObj()
