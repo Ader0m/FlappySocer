@@ -29,7 +29,7 @@ public class Game : MonoBehaviour
     void Start()
     {
         CanvasManager.Instance.SetScore();
-        CanvasManager.Instance.SetMaxScore();
+        CanvasManager.Instance.SetMaxScore(ScoreLogick.MaxScore);
     }
 
     public void StartGame()
@@ -37,7 +37,7 @@ public class Game : MonoBehaviour
         _scoreLogick.Reset();
         CanvasManager.Instance.SwitchMenuGroup();
         CanvasManager.Instance.SetScore();
-        CanvasManager.Instance.SetMaxScore();
+        CanvasManager.Instance.SetMaxScore(ScoreLogick.MaxScore);
         Spawner.Instance.gameObject.SetActive(true);
         Spawner.Instance.SpawnPlayer();
     }

@@ -24,6 +24,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _pipesAndLandSpeed;
     private List<IGameWorldObj> _pipesAndLandList;
     private DateTime _timePipes;
+    private float _pipesSpawnX;
+    private float _landSpawnX;
 
     #region Get/Set
 
@@ -41,6 +43,10 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        _pipesSpawnX = transform.position.x;
+        _landSpawnX = _pipesSpawnX * 1.272f;
+        _pipesSpawnX *= 1.111f;
+       
         _timePipes = DateTime.Now;
     }
 
@@ -55,7 +61,7 @@ public class Spawner : MonoBehaviour
         if ((DateTime.Now - _timePipes).TotalMilliseconds > _delaySpawnPipes)
         {
             GameObject obj = Instantiate(_pipes, _pipeLayer);
-            obj.transform.position = new Vector3(10, UnityEngine.Random.Range(0, 7) - 3, 1);
+            obj.transform.position = new Vector3(_pipesSpawnX, UnityEngine.Random.Range(0, 7) - 3, 1);
             _timePipes = DateTime.Now;
         }
     }

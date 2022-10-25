@@ -29,7 +29,7 @@ public class ScoreLogick
         CanvasManager.Instance.SetScore();
         if (_score > _maxScore)
         {
-            CanvasManager.Instance.SetMaxScore();
+            CanvasManager.Instance.SetMaxScore(_score);
         }
     }
 
