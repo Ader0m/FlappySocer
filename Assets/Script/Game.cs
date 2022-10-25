@@ -33,7 +33,7 @@ public class Game : MonoBehaviour
     public void StartGame()
     {
         _scoreLogick.Reset();
-        CanvasManager.Instance.SwitchMenuGroup();
+        CanvasManager.Instance.SwitchMenuGroup(false);
         CanvasManager.Instance.SetScore();
         CanvasManager.Instance.SetMaxScore(ScoreLogick.MaxScore);
         Spawner.Instance.gameObject.SetActive(true);
@@ -50,6 +50,6 @@ public class Game : MonoBehaviour
         }
 
         _scoreLogick.CheckMaxScore();
-        CanvasManager.Instance.SwitchMenuGroup();
+        CanvasManager.Instance.SwitchMenuGroup(true);
     }
 }

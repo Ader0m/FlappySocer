@@ -35,8 +35,8 @@ public class CanvasManager : MonoBehaviour
         _maxScoreText.text = "Max score: " + score.ToString();
     }
 
-    public void SwitchMenuGroup()
+    public void SwitchMenuGroup(bool state)
     {
-        _menuGroup.gameObject.SetActive(!_menuGroup.gameObject.activeSelf);
+        _menuGroup.gameObject.SetActive(state);
     }
 }
