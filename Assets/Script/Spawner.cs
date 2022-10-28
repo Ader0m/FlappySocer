@@ -28,6 +28,7 @@ public class Spawner : MonoBehaviour
 
     #region Get/Set
 
+
     public Transform PipeLayer => _pipeLayer;
     public List<IGameWorldObj> PipesAndLandList => _pipesAndLandList;
 
