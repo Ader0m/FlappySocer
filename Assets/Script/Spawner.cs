@@ -17,7 +17,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform _pipeLayer;
     [SerializeField] private Transform _landLayer;
     /// <summary>
-    /// milliseconds
+    /// milliseconds.
+    /// Это значение изменяется в процессе игры
     /// </summary>
     [SerializeField] private float _delaySpawnPipes;
     [SerializeField] private float _pipesAndLandSpeed;

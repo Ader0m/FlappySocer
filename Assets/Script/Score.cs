@@ -23,7 +23,11 @@ public class ScoreLogick
     {
         _score++;
         CanvasManager.Instance.SetScore();
-        Spawner.Instance.DelaySpawnPipes = Spawner.Instance.DelaySpawnPipes - _spawnTimeProgress * (_score / Game.Instance.DificultyProgress);
+
+        if (_score % Game.Instance.DificultyProgress == 0)
+        {
+            Spawner.Instance.DelaySpawnPipes = Spawner.Instance.DelaySpawnPipes - (_spawnTimeProgress * (_score / Game.Instance.DificultyProgress));
+        }
         if (_score > _maxScore)
         {
             CanvasManager.Instance.SetMaxScore(_score);

@@ -10,6 +10,11 @@ public class Game : MonoBehaviour
     #endregion
 
     [SerializeField] public int DificultyProgress = 25;
+    /// <summary>
+    /// milliseconds.
+    /// Это значение устанавливается при нажатии кнопки StartButton
+    /// </summary>
+    [SerializeField] private float _delaySpawnPipes;
     private ScoreLogick _scoreLogick;
 
     #region Get/Set
@@ -37,6 +42,7 @@ public class Game : MonoBehaviour
         CanvasManager.Instance.SwitchMenuGroup(false);
         CanvasManager.Instance.SetScore();
         CanvasManager.Instance.SetMaxScore(ScoreLogick.MaxScore);
+        Spawner.Instance.DelaySpawnPipes = _delaySpawnPipes;
         Spawner.Instance.gameObject.SetActive(true);
         Spawner.Instance.SpawnPlayer();
     }
