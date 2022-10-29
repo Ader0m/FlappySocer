@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0134f1cfd97f1b14f8b925a7275a326c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DificultyProgress: 15
 --- !u!4 &126894771
 Transform:
   m_ObjectHideFlags: 0
@@ -182,6 +183,8 @@ MonoBehaviour:
   _barrier: {fileID: 1834618584}
   _camera: {fileID: 519420031}
   _spawner: {fileID: 1285317676}
+  _pipesSpawnX: 0
+  _landSpawnX: 0
 --- !u!1 &138886035
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,8 +213,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449952155}
-  - {fileID: 1871017326}
   - {fileID: 1590726543}
+  - {fileID: 1871017326}
   - {fileID: 2084249378}
   - {fileID: 172574193}
   m_Father: {fileID: 0}
@@ -1552,8 +1555,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008567565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1839, y: -0.0403, z: 10}
-  m_LocalScale: {x: 4.0318704, y: 1.9309556, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 7.0513573, y: 3.3435395, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1839,7 +1842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088924136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2073905337}

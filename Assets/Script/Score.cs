@@ -3,6 +3,7 @@
 
 public class ScoreLogick
 {
+    [SerializeField] private int _spawnTimeProgress = 100;
     private static int _maxScore = 0;
     private int _score = 0;
 
@@ -20,8 +21,9 @@ public class ScoreLogick
 
     public void AddScore()
     {
-        _score += (_score / 25) + 1;
+        _score++;
         CanvasManager.Instance.SetScore();
+        Spawner.Instance.DelaySpawnPipes = Spawner.Instance.DelaySpawnPipes - _spawnTimeProgress * (_score / Game.Instance.DificultyProgress);
         if (_score > _maxScore)
         {
             CanvasManager.Instance.SetMaxScore(_score);

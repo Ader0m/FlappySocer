@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
 
     #region Get/Set
 
-
+    public float DelaySpawnPipes { get { return _delaySpawnPipes; } set { _delaySpawnPipes = value; } }
     public Transform PipeLayer => _pipeLayer;
     public List<IGameWorldObj> PipesAndLandList => _pipesAndLandList;
 
@@ -43,9 +43,8 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        _pipesSpawnX = transform.position.x;
-        _landSpawnX = _pipesSpawnX + 2.45f; // Sprite Size / 2
-        _pipesSpawnX *= 1.111f;
+        _pipesSpawnX = ResolutionAdapter.Instance._pipesSpawnX;
+        _landSpawnX = ResolutionAdapter.Instance._landSpawnX;
         _timePipes = DateTime.Now;      
     }
 
@@ -73,7 +72,7 @@ public class Spawner : MonoBehaviour
 
     private void MoveObj()
     {
-        float newPipesAndLandSpeed = _pipesAndLandSpeed + Game.Instance.ScoreLogick.Score / 25;
+        float newPipesAndLandSpeed = _pipesAndLandSpeed + Game.Instance.ScoreLogick.Score / Game.Instance.DificultyProgress;
 
 
         foreach (var worldObj in _pipesAndLandList)

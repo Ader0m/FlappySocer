@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
 
     #endregion
 
+    [SerializeField] public int DificultyProgress = 25;
     private ScoreLogick _scoreLogick;
 
     #region Get/Set
