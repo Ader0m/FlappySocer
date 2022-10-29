@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DificultyProgress: 15
+  _delaySpawnPipes: 2100
 --- !u!4 &126894771
 Transform:
   m_ObjectHideFlags: 0
@@ -418,15 +419,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8588753113402346394, guid: e6bc3cfca0b0d9a449d560a026db592b, type: 3}
       propertyPath: m_Size.y
-      value: 2.51
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 8588753113402346394, guid: e6bc3cfca0b0d9a449d560a026db592b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 838a24c83886ea948809140eac041800, type: 3}
+      objectReference: {fileID: 21300000, guid: ea764b6ff4be9a84f872c2ce69f1d21f, type: 3}
     - target: {fileID: 8588753113402346394, guid: e6bc3cfca0b0d9a449d560a026db592b, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6bc3cfca0b0d9a449d560a026db592b, type: 3}
