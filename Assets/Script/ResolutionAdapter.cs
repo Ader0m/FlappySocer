@@ -28,7 +28,7 @@ public class ResolutionAdapter : MonoBehaviour
 
         rightDownPoint = _camera.ScreenToWorldPoint(new Vector3(_camera.orthographicSize / 2, 0));
         rightDownPoint.x *= -1;
-        rightDownPoint.x *= 1.0165f;
+        rightDownPoint.x *= 1.0165f; // небольшое смещение, чтобы дать блоку время на спавн
 
         _barrier.transform.localScale = rightDownPoint * 2.2f; // отношение размера барьера к размеру камеры
         _spawner.transform.position = rightDownPoint;
