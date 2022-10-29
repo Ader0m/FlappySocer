@@ -51,9 +51,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5224040288351176852, guid: 0f4d1d1822604fc428c2c2bb0c00a2c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ea764b6ff4be9a84f872c2ce69f1d21f, type: 3}
     - target: {fileID: 6786156651965988304, guid: 0f4d1d1822604fc428c2c2bb0c00a2c5, type: 3}
       propertyPath: m_Name
-      value: Land (1)
+      value: StaticLand
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 786462291133130477, guid: 0f4d1d1822604fc428c2c2bb0c00a2c5, type: 3}
